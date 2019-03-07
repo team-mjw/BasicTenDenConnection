@@ -20,7 +20,7 @@ import java.util.Scanner;
 public class TenDen {
 
     //*****STEP 1: obtain the Current IP Address of the Light Bulb
-    public InetAddress initialUDPConnection() throws Exception {
+    public InetAddress getBulbIPAddress() throws Exception {
  
         System.out.println("*****Searching for Device*****\n");
 
@@ -75,7 +75,7 @@ public class TenDen {
     }
 
     //Step 2: Initiate TCP Connection and Run functions with lightBulb
-    public void tcpConnection (InetAddress location) throws Exception {
+    public void connectBulb(InetAddress location) throws Exception {
         //User Input
         String userInput = "";
 
@@ -136,9 +136,9 @@ public class TenDen {
     public static void main(String args[]) throws Exception {
         TenDen lightBulb1 = new TenDen();
 
-        InetAddress ipAddress = lightBulb1.initialUDPConnection();
+        InetAddress ipAddress = lightBulb1.getBulbIPAddress();
 
-        lightBulb1.tcpConnection(ipAddress);
+        lightBulb1.connectBulb(ipAddress);
 
         System.out.println("See you Later!");
     }
